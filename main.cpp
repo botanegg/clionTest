@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "staticClazz.h"
+
 using namespace std;
 
 class Clazz {
@@ -26,7 +28,7 @@ public:
     }
 
     bool operator>=(const Clazz &other) const {
-        return *this >= other; //wrong OCSimplifyInspection
+        return !(*this < other); //wrong OCSimplifyInspection
     }
 
 };
@@ -35,6 +37,14 @@ public:
 int main() {
     Clazz a(1);
     Clazz b(2);
+
+    staticClazz sa0;
+    staticClazz sa1;
+
+    cout << "sa0 " << sa0.getA() << endl;
+    cout << "sa1 " << sa1.getA() << endl;
+    cout << endl;
+
     cout << (a >= b) << endl; //crash
     cout << Clazz(42).getIntValue() << endl;
     return 0;
