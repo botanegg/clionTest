@@ -50,7 +50,7 @@ int main() {
     for(;;) {
         if (brk) { //change this expression leads to a change in the inspection below (e.g. "if (true)" )
             if(i == 0) { // inspection depends of the level of nesting
-                cout << "i==0 is " << ((i == 0) ? "true" : "false") << endl;
+                cout << "i==0 is " << ((i == 0) ? "true" : "false") << endl; //it inspection works true i think
             }
         }
         ++i;
