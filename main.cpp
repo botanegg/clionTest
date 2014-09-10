@@ -26,13 +26,16 @@ public:
     }
 
     bool operator>=(const Clazz &other) const {
-        return !(*this < other); //wrong OCSimplifyInspection
+        return *this >= other; //wrong OCSimplifyInspection
     }
 
 };
 
 
 int main() {
+    Clazz a(1);
+    Clazz b(2);
+    cout << (a >= b) << endl; //crash
     cout << Clazz(42).getIntValue() << endl;
     return 0;
 }
