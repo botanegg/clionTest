@@ -1,5 +1,5 @@
-#ifndef _CLIENT_APP_H_
-#define _CLIENT_APP_H_
+#ifndef _SERVER_APP_H_
+#define _SERVER_APP_H_
 
 class App {
 public:
@@ -7,13 +7,13 @@ public:
 
 protected:
 private:
-    App(); /// run quick-fix it
+    App(); /// run quick-fix it (build fail)
 
-    ~App(); /// run quick-fix it
+    ~App(); /// run quick-fix it (build fail)
 
-    App(const App &_rhs);
+    App(const App &_rhs); /// run quick-fix it (build fail)
 
     App &operator=(const App &_rhs);
 };
 
-#endif /* _CLIENT_APP_H_ */
+#endif /* _SERVER_APP_H_ */
