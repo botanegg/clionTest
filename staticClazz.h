@@ -9,4 +9,6 @@ public:
     int getA() const;
 
     staticClazz();
+
+    void nullMethod();
 };
