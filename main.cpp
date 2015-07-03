@@ -33,8 +33,29 @@ public:
 
 };
 
+//преобразует строковый код языка или страны в числовой; возвращает 0 в случае ошибки
+int ConvertISOLangCode(const char *code) {
+    union {
+        char s[4];
+        int c;
+    };
+    c = 0;
+    unsigned i;
+    for (i = 0; *code; i++) {
+        if (i == 3)
+            return 0;
+        s[i] = tolower(*code++);
+    }
+    return i > 1 ? c : 0;
+}
+
 
 int main() {
+
+    cout << "langcode" << endl;
+    cout << ConvertISOLangCode("en") << endl;
+    cout << ConvertISOLangCode("ru") << endl << endl;
+
     Clazz a(1);
     Clazz b(2);
 
